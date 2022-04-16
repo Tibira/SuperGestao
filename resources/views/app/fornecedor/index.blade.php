@@ -1,9 +1,14 @@
 <h3>Fornecedores</h3>
 
-@if(count($fornecedores) > 0 && count($fornecedores) < 10)
-    <h3>Existem alguns fornecedores cadastrados</h3>
-@elseif(count($fornecedores) > 10)
-    <h3>Existem vários fornecedores cadastrados</h3>
-@else
-    <h3>Não existe fornecedores cadastrados</h3>
-@endif
+@isset($fornecedores)
+    
+    @foreach ($fornecedores as $indice => $fornecedor)
+        <h3>Fornecedor: {{ $fornecedor['nome'] }}</h3>
+        <br>
+        <h3>Status: {{ $fornecedor['status'] }}</h3>
+        <br>
+        <h3>CNPJ: {{ $fornecedor['cnpj'] ?? ''}}</h3>
+        <br>
+        <h3>Telefone: ({{ $fornecedor['ddd'] ?? ''}}) {{ $fornecedor['telefone'] ?? '' }}</h3>
+    @endforeach
+@endisset
