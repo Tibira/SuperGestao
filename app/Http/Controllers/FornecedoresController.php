@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FornecedorController extends Controller
+class FornecedoresController extends Controller
 {
     public function index(){
         $fornecedores = [
